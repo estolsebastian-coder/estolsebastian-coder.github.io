@@ -12,7 +12,7 @@ La aplicación «Cerebro» es desarrollada y operada por Sebastián Estol, arqui
 
 ## 3. Datos a los que accede
 
-Mediante el protocolo OAuth 2.0 de Google, la aplicación accede únicamente a los datos de la cuenta de Google que el usuario autoriza de forma expresa en la pantalla de consentimiento, dentro de los alcances (scopes) allí indicados. No se solicitan alcances distintos de los necesarios para la finalidad descrita.
+Mediante el protocolo OAuth 2.0 de Google, la aplicación solicita únicamente los alcances (scopes) que se enumeran a continuación, cada uno con su finalidad. Con `openid` y `https://www.googleapis.com/auth/userinfo.email` identifica la cuenta de Google que otorga la autorización. Con `https://www.googleapis.com/auth/gmail.readonly` lee, en modo de solo lectura, los mensajes de correo electrónico para extraer plazos, observaciones, expedientes y antecedentes hacia el sistema de notas; no envía, modifica ni elimina correos. Con `https://www.googleapis.com/auth/drive.readonly` lee, en modo de solo lectura, los archivos de Google Drive para indexarlos y consultarlos desde el sistema. Con `https://www.googleapis.com/auth/drive.file` crea y edita en Google Drive únicamente los archivos que la propia aplicación genera, sin acceso de escritura al resto. Con `https://www.googleapis.com/auth/calendar.events` lee y crea eventos de calendario para registrar vencimientos, visitas y plazos. No se solicitan alcances distintos de los enumerados; en particular, la aplicación no solicita acceso completo al buzón de correo ni a la totalidad de Google Drive.
 
 ## 4. Finalidad del tratamiento
 
